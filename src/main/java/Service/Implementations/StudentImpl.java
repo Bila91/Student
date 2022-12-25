@@ -17,22 +17,22 @@ public class StudentImpl implements IStudentService {
  private StudentRepository repository;
 
     @Override
-    public Student saveStudent(Student student) {
-        return repository.save(student);
+    public Integer saveStudent(Student student) {
+        return repository.save(student).getSno();
     }
 
     @Override
     public List<Student> getAllStudents() {
-        return null;
+        return (List<Student>) repository.findAll();
     }
 
     @Override
     public Student getStudentBYId(Integer sno) {
-        return null;
+        return repository.findById(sno).get();
     }
 
     @Override
     public void deleteStudent(Integer sno) {
-
+          repository.deleteById(sno);
     }
 }
