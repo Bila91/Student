@@ -20,7 +20,7 @@ public class Student {
     @Id
     @GeneratedValue (strategy = GenerationType.IDENTITY)
   //  @Setter(AccessLevel.NONE)
-    private Long sno;
+    private Integer sno;
 
     private String stdName;
     private String stdClasse;
