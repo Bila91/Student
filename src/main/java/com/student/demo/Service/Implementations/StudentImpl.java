@@ -1,8 +1,9 @@
-package Service.Implementations;
+package com.student.demo.Service.Implementations;
 
-import Entity.Student;
-import Repos.StudentRepository;
-import Service.Interfaces.IStudentService;
+
+import com.student.demo.Entities.Student;
+import com.student.demo.Repos.StudentRepository;
+import com.student.demo.Service.Interfaces.IStudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

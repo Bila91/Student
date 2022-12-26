@@ -1,8 +1,8 @@
-package Controller;
+package com.student.demo.Controller;
 
 
-import Entity.Student;
-import Service.Interfaces.IStudentService;
+import com.student.demo.Entities.Student;
+import com.student.demo.Service.Interfaces.IStudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -28,7 +28,7 @@ public class StudentController {
 
 
   @PutMapping("/updateStudent/{sno}")
-  public  ResponseEntity<String> updateStudent(@PathVariable ("sno") Integer sno, Student student)
+  public  ResponseEntity<String> updateStudent(@PathVariable("sno") Integer sno, @RequestBody Student student)
   {
 
       Student stdFromdb = service.getStudentBYId(sno);
@@ -40,6 +40,7 @@ public class StudentController {
 
     return new ResponseEntity<String>("Sudent with id : "+id+" sno is:"+sno+" has been updated", HttpStatus.OK);
   }
+
 
 
   @GetMapping("/studentList")

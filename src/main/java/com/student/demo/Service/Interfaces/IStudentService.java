@@ -1,7 +1,8 @@
-package Service.Interfaces;
+package com.student.demo.Service.Interfaces;
 
 
-import Entity.Student;
+
+import com.student.demo.Entities.Student;
 
 import java.util.List;
 
