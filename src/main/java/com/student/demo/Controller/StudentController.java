@@ -2,6 +2,8 @@ package com.student.demo.Controller;
 
 
 import com.student.demo.Entities.Student;
+import com.student.demo.Service.DTO.StudentDTO;
+import com.student.demo.Service.DTO.StudentDTOName;
 import com.student.demo.Service.Interfaces.IStudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -51,7 +53,19 @@ public class StudentController {
   }
 
 
+    @GetMapping("/studentListDTO")
+    public ResponseEntity<List<StudentDTO>>getAllStudentsDTO()
+    {
+        List<StudentDTO> list = service.getAllStudentWithoutSchoolName();
+        return new ResponseEntity<List<StudentDTO>>(list, HttpStatus.OK);
+    }
 
+    @GetMapping("/studentListDTOName")
+    public ResponseEntity<List<StudentDTOName>>getAllStudentsNames()
+    {
+        List<StudentDTOName> list = service.getALLStudentName();
+        return new ResponseEntity<List<StudentDTOName>>(list, HttpStatus.OK);
+    }
 
    @GetMapping("/getStudentBYId/{sno}")
    public ResponseEntity<Student> getStudentById( @PathVariable("sno") Integer sno)
