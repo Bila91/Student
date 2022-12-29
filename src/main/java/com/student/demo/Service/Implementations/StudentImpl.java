@@ -7,7 +7,6 @@ import com.student.demo.Service.DTO.StudentDTO;
 import com.student.demo.Service.DTO.StudentDTOName;
 import com.student.demo.Service.Interfaces.IStudentService;
 import com.student.demo.Service.Mapper.StudentMap;
-import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -23,7 +22,7 @@ public class StudentImpl implements IStudentService {
  private StudentRepository repository;
 
 
-private ModelMapper mapper;
+
 
 @Autowired
 private StudentMap studentMap;
